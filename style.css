@@ -273,6 +273,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .upload-zone:hover {

@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>จัดการสินค้า</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <img
+          src="./images/Logo.png"
+          alt=""
+          style="width: 100px; height: auto"
+        />
+        <a href="index.html" style="color: black">
+          <h1>ISEEURRAM</h1>
+        </a>
+      </div>
+
+      <div class="main-menu">
+        <a href="index.html">หน้าแรก</a>
+        <a href="#">จัดการสินค้า</a>
+      </div>
+    </div>
+
+    <div class="section-seller">
+      <div class="page-header">
+        <h1 class="page-title">ระบบจัดการสินค้า</h1>
+        <p class="page-subtitle">เพิ่ม แก้ไข และดูรายการสินค้าในคลังของคุณ</p>
+      </div>
+
+      <div class="card-body">
+        <form action="#" enctype="multipart/form-data" method="post">
+          <div class="form-grid">
+            <!-- column 1 -->
+            <div class="input-form">
+              <div class="form-group">
+                <label class="form-label" for="p_name">ชื่อสินค้า</label>
+                <input
+                  id="p_name"
+                  type="text"
+                  name="p_name"
+                  placeholder="กรอกชื่อสินค้า"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="stock">จำนวณ</label>
+                <input
+                  id="stock"
+                  min="0"
+                  type="number"
+                  name="stock"
+                  placeholder="0"
+                />
+              </div>
+            </div>
+
+            <div class="input-form">
+              <div class="form-group" class="form-group">
+                <label class="form-label" for="price">ราคาขาย (บาท)</label>
+                <input
+                  min="0"
+                  id="price"
+                  type="number"
+                  name="price"
+                  placeholder="0.00"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cate_id">หมวดหมู่สินค้า</label>
+                <select name="cate_id" id="cate_id" size="1">
+                  <option value="">-- เลือกหมวดหมู่ --</option>
+                  <option value="CPU">CPU</option>
+                  <option value="Mainboard">Mainboard</option>
+                  <option value="VGA">VGA</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="img_name">รูปสินค้า</label>
+
+            <div class="upload-zone">
+              <input
+                name="img_name"
+                type="file"
+                id="img_name"
+                accept="image/png, image/jpeg"
+                style="
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  opacity: 0;
+                  cursor: pointer;
+                "
+                required
+              />
+              <i class="ph ph-cloud-arrow-up upload-icon"></i>
+              <div class="upload-text">
+                <span>คลิกเพื่ออัพโหลด</span> หรือลากมาวางที่นี่
+              </div>
+              <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 4px">
+                PNG, JPG ขนาดไม่เกิน 5MB
+              </div>
+            </div>
+          </div>
+          <div class="btn-group">
+            <button type="reset" class="btn btn-outline">
+              <i class="ph ph-arrow-counter-clockwise"></i> ล้างข้อมูล
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="ph ph-floppy-disk"></i> เพิ่มสินค้า
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card-body">
+        <div class="card-header">
+          <div class="card-title">ตารางแสดงข้อมูลสินค้า</div>
+          <div class="search-box">
+            <i class="ph ph-magnifying-glass"></i>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="ค้นหาสินค้า..."
+            />
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th width="60">ลำดับ</th>
+                <th class="text-center" width="80">รูปภาพ</th>
+                <th>ชื่อสินค้า</th>
+                <th class="text-right">ราคา (฿)</th>
+                <th class="text-center">คงเหลือ</th>
+                <th>หมวดหมู่</th>
+                <th class="text-right" width="100">จัดการ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <div class="img-placeholder">
+                    <img
+                      src="/images/PCPU/p1CPU.png"
+                      alt="INTEL CORE I9-14900K"
+                      style="
+                        width: 50px;
+                        height: 50px;
+                        object-fit: cover;
+                        border-radius: 4px;
+                      "
+                    />
+                  </div>
+                </td>
+                <td style="font-weight: 500">
+                  INTEL CORE I9-14900K - 24C 32T 2.4-6.0GHz (INTEL SOCKET 1700)
+                </td>
+                <td class="text-right font-medium">฿17,400</td>
+                <td class="text-center">
+                  <span class="badge badge-success">15</span>
+                </td>
+                <td>
+                  <span class="badge badge-info">CPU</span>
+                </td>
+                <td>
+                  <div class="action-btns">
+                    <button class="btn-icon btn-edit" title="แก้ไข">
+                      <a href="edit.html" class="btn-edit">
+                        <i class="ph ph-pencil-simple"></i>
+                      </a>
+                    </button>
+                    <button class="btn-icon btn-delete" title="ลบ">
+                      <i class="ph ph-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>
+                  <div class="img-placeholder"><i class="ph ph-image"></i></div>
+                </td>
+                <td style="font-weight: 500">
+                  AMD RYZEN 7 9800X3D - 8C 16T 4.7-5.2GHz (AMD SOCKET AM5)
+                </td>
+                <td class="text-right font-medium">฿17,990</td>
+                <td class="text-center">
+                  <span class="badge badge-success">15</span>
+                </td>
+                <td>
+                  <span class="badge badge-info">CPU</span>
+                </td>
+                <td>
+                  <div class="action-btns">
+                    <button class="btn-icon btn-edit" title="แก้ไข">
+                      <a href="edit.html" class="btn-edit">
+                        <i class="ph ph-pencil-simple"></i>
+                      </a>
+                    </button>
+                    <button class="btn-icon btn-delete" title="ลบ">
+                      <i class="ph ph-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>
+                  <div class="img-placeholder"><i class="ph ph-image"></i></div>
+                </td>
+                <td style="font-weight: 500">
+                  ASUS PRIME B550M-K - AMD SOCKET AM4 DDR4 MICRO-ATX
+                </td>
+                <td class="text-right font-medium">฿2,490</td>
+                <td class="text-center">
+                  <span class="badge badge-success">15</span>
+                </td>
+                <td>
+                  <span class="badge badge-info">Mainboard</span>
+                </td>
+                <td>
+                  <div class="action-btns">
+                    <button class="btn-icon btn-edit" title="แก้ไข">
+                      <a href="edit.html" class="btn-edit">
+                        <i class="ph ph-pencil-simple"></i>
+                      </a>
+                    </button>
+                    <button class="btn-icon btn-delete" title="ลบ">
+                      <i class="ph ph-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>
+                  <div class="img-placeholder"><i class="ph ph-image"></i></div>
+                </td>
+                <td style="font-weight: 500">
+                  MSI PRO B760M-P - INTEL SOCKET 1700 DDR5 MICRO-ATX
+                </td>
+                <td class="text-right font-medium">฿2,390</td>
+                <td class="text-center">
+                  <span class="badge badge-success">15</span>
+                </td>
+                <td>
+                  <span class="badge badge-info">Mainboard</span>
+                </td>
+                <td>
+                  <div class="action-btns">
+                    <button class="btn-icon btn-edit" title="แก้ไข">
+                      <a href="edit.html" class="btn-edit">
+                        <i class="ph ph-pencil-simple"></i>
+                      </a>
+                    </button>
+                    <button class="btn-icon btn-delete" title="ลบ">
+                      <i class="ph ph-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>
+                  <div class="img-placeholder"><i class="ph ph-image"></i></div>
+                </td>
+                <td style="font-weight: 500">
+                  GALAX GEFORCE RTX 5080 1-CLICK OC - 16GB GDDR7
+                </td>
+                <td class="text-right font-medium">฿43,500</td>
+                <td class="text-center">
+                  <span class="badge badge-success">90</span>
+                </td>
+                <td>
+                  <span class="badge badge-info">VGA</span>
+                </td>
+                <td>
+                  <div class="action-btns">
+                    <button class="btn-icon btn-edit" title="แก้ไข">
+                      <a href="edit.html" class="btn-edit">
+                        <i class="ph ph-pencil-simple"></i>
+                      </a>
+                    </button>
+                    <button class="btn-icon btn-delete" title="ลบ">
+                      <i class="ph ph-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination-container">
+          <div style="color: var(--text-muted)">แสดง 1 ถึง 2 จาก 2 รายการ</div>
+          <div class="pagination">
+            <button class="page-item">ก่อนหน้า</button>
+            <button class="page-item active">1</button>
+            <button class="page-item">ถัดไป</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>© 2026   I SEE UR RAM (ISUR)</footer>
+  </body>
+</html>

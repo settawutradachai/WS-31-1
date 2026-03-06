@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>แก้ไขสินค้า</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <img
+          src="./images/Logo.png"
+          alt=""
+          style="width: 100px; height: auto"
+        />
+        <a href="index.html" style="color: black">
+          <h1>ISEEURRAM</h1>
+        </a>
+      </div>
+
+      <div class="main-menu">
+        <a href="index.html">หน้าแรก</a>
+        <a href="#">จัดการสินค้า</a>
+      </div>
+    </div>
+
+    <div class="section-seller">
+      <div class="page-header">
+        <h1 class="page-title">ระบบแก้ไขสินค้า</h1>
+        <p class="page-subtitle">แก้ไขสินค้าในรายการของคุณ</p>
+      </div>
+
+      <div class="card-body">
+        <form action="#" enctype="multipart/form-data" method="post">
+          <div class="form-grid">
+            <!-- column 1 -->
+            <div class="input-form">
+              <div class="form-group">
+                <label class="form-label" for="p_name">ชื่อสินค้า</label>
+                <input
+                  id="p_name"
+                  type="text"
+                  name="p_name"
+                  placeholder="กรอกชื่อสินค้า"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="stock">จำนวณ</label>
+                <input
+                  id="stock"
+                  min="0"
+                  type="number"
+                  name="stock"
+                  placeholder="0"
+                />
+              </div>
+            </div>
+
+            <div class="input-form">
+              <div class="form-group" class="form-group">
+                <label class="form-label" for="price">ราคาขาย (บาท)</label>
+                <input
+                  min="0"
+                  id="price"
+                  type="number"
+                  name="price"
+                  placeholder="0.00"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cate_id">หมวดหมู่สินค้า</label>
+                <select name="cate_id" id="cate_id" size="1">
+                  <option value="">-- เลือกหมวดหมู่ --</option>
+                  <option value="CPU">CPU</option>
+                  <option value="Mainboard">Mainboard</option>
+                  <option value="VGA">VGA</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="img_name">รูปสินค้า</label>
+
+            <div class="upload-zone">
+              <input
+                name="img_name"
+                type="file"
+                id="img_name"
+                accept="image/png, image/jpeg"
+                style="
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  opacity: 0;
+                  cursor: pointer;
+                "
+                required
+              />
+              <i class="ph ph-cloud-arrow-up upload-icon"></i>
+              <div class="upload-text">
+                <span>คลิกเพื่ออัพโหลด</span> หรือลากมาวางที่นี่
+              </div>
+              <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 4px">
+                PNG, JPG ขนาดไม่เกิน 5MB
+              </div>
+            </div>
+          </div>
+          <div class="btn-group">
+            <button type="reset" class="btn btn-outline">
+              <i class="ph ph-arrow-counter-clockwise"></i> ย้อนกลับ
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="ph ph-floppy-disk"></i> แก้ไขสินค้า
+            </button>
+          </div>
+        </form>
+      </div>    
+    </div>
+  </body>
+</html>
